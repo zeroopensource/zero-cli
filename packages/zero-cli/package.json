@@ -1,7 +1,7 @@
 {
   "name": "@zeroopensource/zero-cli",
   "version": "0.0.0",
-  "description": "",
+  "description": "Unified CLI entry point for all Zero open source packages",
   "type": "module",
   "main": "./dist/zero-cli.cjs",
   "module": "./dist/zero-cli.js",
