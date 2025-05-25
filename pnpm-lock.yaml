@@ -17,6 +17,9 @@ importers:
       '@types/node':
         specifier: 22.15.20
         version: 22.15.20
+      '@zeroopensource/zero-cli':
+        specifier: workspace:^
+        version: link:packages/zero-cli
       cpx:
         specifier: 1.5.0
         version: 1.5.0
