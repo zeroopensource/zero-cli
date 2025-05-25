@@ -1,0 +1,23 @@
+{
+  "name": "@zeroopensource/zero-cli",
+  "version": "0.0.0",
+  "description": "Unified CLI entry point for all Zero open source packages",
+  "type": "module",
+  "main": "./dist/zero-cli.cjs",
+  "module": "./dist/zero-cli.js",
+  "types": "./dist/zero-cli.d.ts",
+  "bin": {
+    "zero": "./bin/cli-proxy.cjs"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "prepack": "cpx ../../README.md ./",
+    "lint": "cross-env TIMING=1 eslint \"**/*.ts*\"",
+    "build": "tsup"
+  },
+  "dependencies": {
+    "commander": "^10.0.0"
+  }
+}
