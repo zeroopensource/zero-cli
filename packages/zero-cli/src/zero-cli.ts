@@ -14,6 +14,14 @@ import packagejson from '../package.json'
 //   return parsedValue
 // }
 
+// const orgLinks = {
+//   Website: 'https://zero.org',
+//   GitHub: 'https://github.com/zeroopensource',
+//   Docs: 'https://zero.org/docs',
+//   Twitter: 'https://twitter.com/zeroopensource',
+//   Discord: 'https://discord.gg/zeroopensource',
+// }
+
 program
   .name(Object.keys(packagejson.bin)[0] || 'undefined')
   .version(packagejson.version || 'undefined', '--version')
@@ -22,3 +30,8 @@ program
   )
 
 program.parse(process.argv)
+
+const noSubCommand = process.argv.length <= 2
+if (noSubCommand) {
+  program.help()
+}
