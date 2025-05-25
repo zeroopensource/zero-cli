@@ -16,10 +16,9 @@ import packagejson from '../package.json'
 
 // TODO: Import from official repo
 const officialLinks = {
-  Website: 'https://zeroopensource.org',
+  'All Official Links': 'https://github.com/zeroopensource/zero-official',
   GitHub: 'https://github.com/zeroopensource',
-  Twitter: 'https://twitter.com/zeroopensource',
-  Discord: 'https://discord.gg/zeroopensource',
+  Website: 'https://zeroopensource.org',
 }
 
 program
