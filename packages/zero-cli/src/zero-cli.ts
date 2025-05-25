@@ -14,13 +14,13 @@ import packagejson from '../package.json'
 //   return parsedValue
 // }
 
-// const orgLinks = {
-//   Website: 'https://zero.org',
-//   GitHub: 'https://github.com/zeroopensource',
-//   Docs: 'https://zero.org/docs',
-//   Twitter: 'https://twitter.com/zeroopensource',
-//   Discord: 'https://discord.gg/zeroopensource',
-// }
+// TODO: Import from official repo
+const officialLinks = {
+  Website: 'https://zeroopensource.org',
+  GitHub: 'https://github.com/zeroopensource',
+  Twitter: 'https://twitter.com/zeroopensource',
+  Discord: 'https://discord.gg/zeroopensource',
+}
 
 program
   .name(Object.keys(packagejson.bin)[0] || 'undefined')
@@ -28,6 +28,17 @@ program
   .description(
     `${packagejson.name}@${packagejson.version}: ${packagejson.description}`
   )
+
+program
+  .command('official')
+  .description('Show official links for Zero Open Source')
+  .action(() => {
+    console.log('\nOfficial Links:\n')
+    for (const [label, url] of Object.entries(officialLinks)) {
+      console.log(`  ${label}: ${url}`)
+    }
+    console.log()
+  })
 
 program.parse(process.argv)
 
