@@ -7,8 +7,16 @@ import {
   // InvalidArgumentError
 } from 'commander'
 import packagejson from '../package.json'
+
 const require = createRequire(__filename)
 const root = dirname(require.resolve('@zeroopensource/zero-cli/package.json'))
+const nodeModulesRoot = join(
+  root,
+  '..',
+  '..',
+  'node_modules',
+  '@zeroopensource'
+)
 
 // TODO: Import from official repo
 const officialLinks = {
@@ -39,11 +47,11 @@ program
   .command('list')
   .description('List installed Zero subcommands')
   .action(async () => {
-    const basePath = join(root, '../') // one level above @zeroopensource/zero-cli
-    const scopePath = join(basePath, '@zeroopensource')
+    // const basePath = join(root, '../') // one level above @zeroopensource/zero-cli
+    // const scopePath = join(basePath, '@zeroopensource')
 
     try {
-      const packages = await readdir(scopePath, { withFileTypes: true })
+      const packages = await readdir(nodeModulesRoot, { withFileTypes: true })
       const zeroPackages = packages
         .filter(
           d =>
