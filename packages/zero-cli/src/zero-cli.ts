@@ -47,15 +47,12 @@ program
   .command('list')
   .description('List installed Zero subcommands')
   .action(async () => {
-    // const basePath = join(root, '../') // one level above @zeroopensource/zero-cli
-    // const scopePath = join(basePath, '@zeroopensource')
-
     try {
       const packages = await readdir(nodeModulesRoot, { withFileTypes: true })
       const zeroPackages = packages
         .filter(
           d =>
-            d.isDirectory() &&
+            (d.isDirectory() || d.isSymbolicLink()) &&
             d.name.startsWith('zero-') &&
             d.name !== 'zero-cli'
         )
