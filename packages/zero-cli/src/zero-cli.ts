@@ -83,6 +83,7 @@ program
   .description(
     'Run subcommand from corresponding @zeroopensource/zero-* package'
   )
+  .argument('<subcommand>', 'The Zero subcommand to run')
   .action(
     async (
       subcommand
