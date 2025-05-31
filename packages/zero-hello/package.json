@@ -1,9 +1,20 @@
 {
   "name": "@zeroopensource/zero-hello",
-  "version": "0.0.1",
-  "main": "cli.js",
+  "version": "0.0.0",
+  "description": "Unified CLI entry point for all Zero open source packages",
   "type": "module",
+  "main": "./dist/zero-hello.cjs",
+  "module": "./dist/zero-hello.js",
+  "types": "./dist/zero-hello.d.ts",
   "exports": {
-    "./cli": "./cli.js"
+    "./cli": "./dist/cli.js"
+  },
+  "scripts": {
+    "prepack": "cpx ../../README.md ./",
+    "lint": "cross-env TIMING=1 eslint \"**/*.ts*\"",
+    "build": "tsup"
+  },
+  "dependencies": {
+    "commander": "^14.0.0"
   }
 }
