@@ -10,5 +10,5 @@
   "access": "restricted",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["@zeropensource/zero-hello"]
+  "ignore": ["@zeroopensource/zero-hello"]
 }
