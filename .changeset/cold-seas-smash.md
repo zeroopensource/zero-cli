@@ -1,6 +1,5 @@
 ---
-"@zeroopensource/zero-cli": patch
-"@zeroopensource/zero-hello": patch
+'@zeroopensource/zero-cli': patch
 ---
 
 Support extensions
