@@ -27,7 +27,7 @@ const officialLinks = {
 
 program
   .name(Object.keys(packagejson.bin)[0] || 'zero')
-  .version(packagejson.version || '0.0.0', '--version')
+  .version(packagejson.version || '0.0.0', '-v, --version')
   .description(
     `${packagejson.name}@${packagejson.version}: ${packagejson.description}`
   )
