@@ -97,6 +97,13 @@ program
         if (typeof subProgram?.parseAsync === 'function') {
           // Replace args with only those after `zero <subcommand>`
           await subProgram.parseAsync(process.argv.slice(3), { from: 'user' })
+
+          // const subArgs = [
+          //   'node',
+          //   `zero-${subcommand}`,
+          //   ...process.argv.slice(3),
+          // ]
+          // await subProgram.parseAsync(subArgs, { from: 'user' })
         } else {
           console.error(
             `❌ ${moduleName} does not export a Commander Command instance.`
