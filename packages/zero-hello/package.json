@@ -1,16 +1,13 @@
 {
-  "name": "@zeroopensource/zero-cli",
-  "version": "0.0.1",
+  "name": "@zeroopensource/zero-hello",
+  "version": "0.0.0",
   "description": "Unified CLI entry point for all Zero open source packages",
   "type": "module",
-  "main": "./dist/zero-cli.cjs",
-  "module": "./dist/zero-cli.js",
-  "types": "./dist/zero-cli.d.ts",
-  "bin": {
-    "zero": "./bin/cli-proxy.cjs"
-  },
-  "publishConfig": {
-    "access": "public"
+  "main": "./dist/zero-hello.cjs",
+  "module": "./dist/zero-hello.js",
+  "types": "./dist/zero-hello.d.ts",
+  "exports": {
+    "./cli": "./dist/cli.js"
   },
   "scripts": {
     "prepack": "cpx ../../README.md ./",
