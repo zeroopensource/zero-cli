@@ -77,50 +77,40 @@ program
     }
   })
 
-// Catch all dynamic subcommands (e.g. "zero id", "zero tags", etc.)
-program
-  .command('*', { hidden: true }) // catch unknown commands
-  .description(
-    'Run subcommand from corresponding @zeroopensource/zero-* package'
-  )
-  .argument('<subcommand>', 'Zero subcommand to run')
-  .action(
-    async (
-      subcommand
-      // cmdArgs
-    ) => {
-      try {
-        const moduleName = `@zeroopensource/zero-${subcommand}/cli`
-        const mod = await import(moduleName)
-        const subProgram = mod.default
+const builtinCommands = ['official', 'list', '--help', '-h', '--version', '-v']
+const [, , potentialSubcommand, ...restArgs] = process.argv
 
-        if (typeof subProgram?.parseAsync === 'function') {
-          // Replace args with only those after `zero <subcommand>`
-          await subProgram.parseAsync(process.argv.slice(3), { from: 'user' })
+;(async () => {
+  if (
+    potentialSubcommand &&
+    !builtinCommands.includes(potentialSubcommand) &&
+    !potentialSubcommand.startsWith('-')
+  ) {
+    // Handle dynamic subcommand: zero <subcommand>
+    const moduleName = `@zeroopensource/zero-${potentialSubcommand}/cli`
+    try {
+      const mod = await import(moduleName)
+      const subProgram = mod.default
 
-          // const subArgs = [
-          //   'node',
-          //   `zero-${subcommand}`,
-          //   ...process.argv.slice(3),
-          // ]
-          // await subProgram.parseAsync(subArgs, { from: 'user' })
-        } else {
-          console.error(
-            `❌ ${moduleName} does not export a Commander Command instance.`
-          )
-          process.exit(1)
-        }
-      } catch (err) {
-        const message = err instanceof Error ? err.message : String(err)
-        console.error(`\n❌ Failed to run subcommand "${subcommand}"\n`)
-        console.error(`→ Tried to load: @zeroopensource/zero-${subcommand}/cli`)
-        console.error(`→ Error: ${message}\n`)
+      if (typeof subProgram?.parseAsync === 'function') {
+        await subProgram.parseAsync(restArgs, { from: 'user' })
+      } else {
+        console.error(
+          `❌ ${moduleName} does not export a Commander Command instance.`
+        )
         process.exit(1)
       }
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err)
+      console.error(`\n❌ Failed to run subcommand "${potentialSubcommand}"`)
+      console.error(`→ Tried to load: ${moduleName}`)
+      console.error(`→ Error: ${message}\n`)
+      process.exit(1)
     }
-  )
-
-program.parseAsync(process.argv)
+  } else {
+    await program.parseAsync(process.argv)
+  }
+})()
 
 const noSubCommand = process.argv.length <= 2
 if (noSubCommand) {
