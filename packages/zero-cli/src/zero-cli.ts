@@ -92,11 +92,14 @@ program
       try {
         const moduleName = `@zeroopensource/zero-${subcommand}/cli`
         const mod = await import(moduleName)
-        if (typeof mod.default === 'function') {
-          await mod.default(process.argv.slice(3)) // pass args to subcommand
+        const subProgram = mod.default
+
+        if (typeof subProgram?.parseAsync === 'function') {
+          // Replace args with only those after `zero <subcommand>`
+          await subProgram.parseAsync(process.argv.slice(3), { from: 'user' })
         } else {
           console.error(
-            `Error: ${moduleName} does not export a default function.`
+            `❌ ${moduleName} does not export a Commander Command instance.`
           )
           process.exit(1)
         }
