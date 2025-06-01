@@ -1,5 +1,11 @@
 # @zeroopensource/zero-cli
 
+## 0.0.2
+
+### Patch Changes
+
+- [#7](https://github.com/zeroopensource/zero-cli/pull/7) [`680d4be`](https://github.com/zeroopensource/zero-cli/commit/680d4beac54d9c744f95a96f2e1cb9a4d7e2cd63) Thanks [@jigz](https://github.com/jigz)! - Support extensions
+
 ## 0.0.1
 
 ### Patch Changes
