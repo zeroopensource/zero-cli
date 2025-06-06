@@ -13,8 +13,4 @@ program
 
 export const cli = program
 
-export const cli2 = () => {
-  console.log('Hello from zero-hello CLI subcommand!')
-}
-
 export default cli
