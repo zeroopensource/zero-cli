@@ -23,8 +23,7 @@
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "turbo": "^2.5.2",
-    "@zeroopensource/zero-cli": "workspace:^",
-    "@zeroopensource/zero-hello": "workspace:^"
+    "@zeroopensource/zero-cli": "workspace:^"
   },
   "packageManager": "pnpm@10.11.1",
   "engines": {
