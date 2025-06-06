@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@zeroopensource/zero-official':
         specifier: latest
-        version: 0.0.2
+        version: 0.0.3
       commander:
         specifier: ^14.0.0
         version: 14.0.0
@@ -31,8 +31,8 @@ packages:
     resolution: {integrity: sha512-3cN0MEFT1noX3ne0kpZHjwKLsds6P0gPllrtvNdrbIBAxWf5ZDsV1EA+SqGf9neVQEm/keqMzy92/CS1Vjgh0w==}
     hasBin: true
 
-  '@zeroopensource/zero-official@0.0.2':
-    resolution: {integrity: sha512-L+sElsDb35vx6o6JHf/onC74gHBZuEj3CO6JOj8buQ8cmo1BLIjX/tZMuMeWIDQX1Bwd+zpEN1KGtdzmFwkm+g==}
+  '@zeroopensource/zero-official@0.0.3':
+    resolution: {integrity: sha512-3oqWIjtRQWA1CMeWyQLFQnhrhQK5XS7WuWofkzPti4RcVNyxOKpshQmJamAojbaHOMO1ptbt4BR9XUn7Kr0XbA==}
     hasBin: true
 
   commander@10.0.1:
@@ -74,7 +74,7 @@ snapshots:
     dependencies:
       commander: 14.0.0
 
-  '@zeroopensource/zero-official@0.0.2':
+  '@zeroopensource/zero-official@0.0.3':
     dependencies:
       '@zeroopensource/zero-cli': 0.0.2
       commander: 10.0.1

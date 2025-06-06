@@ -6,13 +6,6 @@ import {
 import packagejson from '../package.json'
 import { ZERO_OFFICIAL_LINKS } from '@zeroopensource/zero-official'
 
-// TODO: Import from official repo
-const officialLinks = {
-  'All Official Links': 'https://github.com/zeroopensource/zero-official',
-  GitHub: 'https://github.com/zeroopensource',
-  Website: 'https://zeroopensource.org',
-}
-
 program
   .name(Object.keys(packagejson.bin)[0] || 'zero')
   .version(packagejson.version || '0.0.0', '-v, --version')
@@ -25,8 +18,8 @@ program
   .description('Show official links for Zero Open Source')
   .action(() => {
     console.log('\nOfficial Links:\n')
-    for (const [label, url] of Object.entries(officialLinks)) {
-      console.log(`  ${label}: ${url}`)
+    for (const [_key, value] of Object.entries(ZERO_OFFICIAL_LINKS)) {
+      console.log(`  ${value.name}: ${value.url}`)
     }
     console.log()
   })
