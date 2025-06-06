@@ -1,5 +1,11 @@
 # @zeroopensource/zero-cli
 
+## 0.0.4
+
+### Patch Changes
+
+- [#16](https://github.com/zeroopensource/zero-cli/pull/16) [`1addfaf`](https://github.com/zeroopensource/zero-cli/commit/1addfafb7b75089f2d771d4e64c0b43c92204349) Thanks [@jigz](https://github.com/jigz)! - feat(cli): add `id` command to generate random hex IDs
+
 ## 0.0.3
 
 ### Patch Changes
