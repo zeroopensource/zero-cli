@@ -24,6 +24,8 @@ program
     console.log()
   })
 
+program.parse(process.argv)
+
 const noSubCommand = process.argv.length <= 2
 if (noSubCommand) {
   program.help()
