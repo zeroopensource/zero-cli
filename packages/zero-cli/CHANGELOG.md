@@ -1,5 +1,11 @@
 # @zeroopensource/zero-cli
 
+## 0.0.3
+
+### Patch Changes
+
+- [#12](https://github.com/zeroopensource/zero-cli/pull/12) [`7c4e2df`](https://github.com/zeroopensource/zero-cli/commit/7c4e2dfd929a43606a78e02c265d530674d00c73) Thanks [@jigz](https://github.com/jigz)! - Update official links
+
 ## 0.0.2
 
 ### Patch Changes
