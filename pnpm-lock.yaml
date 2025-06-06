@@ -20,9 +20,6 @@ importers:
       '@zeroopensource/zero-cli':
         specifier: workspace:^
         version: link:packages/zero-cli
-      '@zeroopensource/zero-hello':
-        specifier: workspace:^
-        version: link:packages/zero-hello
       cpx:
         specifier: 1.5.0
         version: 1.5.0
