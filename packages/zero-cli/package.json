@@ -2,9 +2,17 @@
   "name": "@zeroopensource/zero-cli",
   "version": "0.0.4",
   "description": "Unified CLI entry point for all Zero open source packages",
+  "author": "Jigz <jigzpalillo@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/zeroopensource/zero-cli",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zeroopensource/zero-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zeroopensource/zero-cli/issues"
+  },
   "type": "module",
-  "main": "./dist/zero-cli.cjs",
-  "module": "./dist/zero-cli.js",
   "types": "./dist/zero-cli.d.ts",
   "bin": {
     "zero": "./bin/cli-proxy.cjs"
@@ -15,7 +23,7 @@
   "scripts": {
     "prepack": "cpx ../../README.md ./",
     "lint": "cross-env TIMING=1 eslint \"**/*.ts*\"",
-    "build": "tsup"
+    "build": "tsdown"
   },
   "dependencies": {
     "commander": "^14.0.0",
@@ -25,5 +33,16 @@
   },
   "devDependencies": {
     "@types/resolve": "1.20.6"
+  },
+  "exports": {
+    "./commander-parse-int": {
+      "import": "./dist/commander-parse-int.mjs",
+      "require": "./dist/commander-parse-int.cjs"
+    },
+    "./zero-cli": {
+      "import": "./dist/zero-cli.mjs",
+      "require": "./dist/zero-cli.cjs"
+    },
+    "./package.json": "./package.json"
   }
 }

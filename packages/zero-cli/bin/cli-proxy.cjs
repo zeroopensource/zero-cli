@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+'use strict'
 
 /**
  * How to create a pipeline when one build produces a "bin" which is used by another build?
