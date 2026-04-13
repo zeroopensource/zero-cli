@@ -24,7 +24,7 @@
     "prepack": "cpx ../../README.md ./",
     "lint": "cross-env TIMING=1 eslint \"**/*.ts*\"",
     "build": "tsdown",
-    "zero": "zero"
+    "zero-cli": "node ./dist/zero-cli.cjs"
   },
   "dependencies": {
     "commander": "^14.0.0",
