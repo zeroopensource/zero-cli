@@ -1,5 +1,11 @@
 # @zeroopensource/zero-cli
 
+## 0.0.5
+
+### Patch Changes
+
+- [#18](https://github.com/zeroopensource/zero-cli/pull/18) [`a244571`](https://github.com/zeroopensource/zero-cli/commit/a2445719ec776dab11e0c0fa64790c2c4e1f2294) Thanks [@jigz](https://github.com/jigz)! - Migrate to tsdown
+
 ## 0.0.4
 
 ### Patch Changes
