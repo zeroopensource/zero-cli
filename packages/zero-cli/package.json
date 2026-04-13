@@ -23,7 +23,8 @@
   "scripts": {
     "prepack": "cpx ../../README.md ./",
     "lint": "cross-env TIMING=1 eslint \"**/*.ts*\"",
-    "build": "tsdown"
+    "build": "tsdown",
+    "zero": "zero"
   },
   "dependencies": {
     "commander": "^14.0.0",
