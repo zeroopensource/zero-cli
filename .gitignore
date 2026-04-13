@@ -1,39 +1,141 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
+# Dependencies
 node_modules
 .pnp
 .pnp.js
 
-# testing
-coverage
-
-# next.js
-.next/
-out/
+# Build outputs
+dist
+dist-ssr
 build
-.swc/
+*.tsbuildinfo
+server/dist
+public/dist
 
-# misc
-.DS_Store
-*.pem
-.eslintcache
-
-# debug
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# local env files
+# Environment variables
+.env
+.env*.local
+*.local
 .env*
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+.env
+.env.production
+.dev.vars
 
-# turbo
+# IDEs and editors
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+*.pem
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# dev
+.yarn/
+!.yarn/releases
+.vscode/*
+!.vscode/launch.json
+!.vscode/*.code-snippets
+.idea/workspace.xml
+.idea/usage.statistics.xml
+.idea/shelf
+
+# Turbo
 .turbo
 
-# build
-dist
+# Better-T-Stack
+.alchemy
+
+# Testing
+coverage
+.nyc_output
+
+# Misc
+*.tgz
+.cache
+tmp
+temp
+
+# Cargo
+**/target/
+**/capabilities/schemas
+
+# Tauri
+**/gen/schemas
+/target/
+/gen/schemas
+keystore.properties
+upload-keystore.jks
+
+# Next.js
+.next/
+out/
+build
+.swc/
+.vercel
+next-env.d.ts
+
+# Local db
+dev.db
+test.db
+
+# typescript
+*.tsbuildinfo
+
+# fumadocs
+.source
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+app-example
+
+# Native
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# Expo generated native folders
+/ios
+/android
+
+# electron
+out-electron
+
+# capacitor
+out-capacitor
+
+# signing
+keystore.properties
+upload-keystore.jks
+*.pfx
+*.jks
+*.base64
+

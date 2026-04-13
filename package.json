@@ -1,9 +1,11 @@
 {
-  "name": "zero-cli",
+  "name": "zero-cli-mono",
   "private": true,
   "scripts": {
+    "check": "ultracite check",
     "build": "turbo run build",
     "dev": "turbo run dev",
+    "start": "turbo run start",
     "lint": "turbo run lint",
     "check-types": "turbo run check-types",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
@@ -11,21 +13,27 @@
     "version": "changeset version",
     "release": "pnpm run build && changeset publish",
     "prepack": "turbo run prepack",
-    "zero-id": "zero-id"
+    "build:force": "turbo build --force",
+    "fix": "ultracite fix"
   },
   "devDependencies": {
     "cpx": "1.5.0",
-    "tsup": "8.5.0",
-    "typescript": "5.8.3",
-    "@changesets/changelog-github": "^0.5.1",
-    "@changesets/cli": "2.29.3",
-    "@types/node": "22.15.20",
-    "prettier": "^3.5.3",
-    "prettier-plugin-tailwindcss": "^0.6.11",
-    "turbo": "^2.5.2",
-    "@zeroopensource/zero-cli": "workspace:^"
+    "tsdown": "^0.21.7",
+    "@typescript/native-preview": "7.0.0-dev.20260328.1",
+    "typescript": "6.0.2",
+    "@changesets/changelog-github": "^0.6.0",
+    "@changesets/cli": "2.30.0",
+    "@types/node": "25.5.2",
+    "prettier": "^3.8.1",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "turbo": "^2.9.5",
+    "@zeroopensource/zero-id": "latest",
+    "@zeroopensource/zero-cli": "latest",
+    "@biomejs/biome": "2.4.10",
+    "ultracite": "7.4.4",
+    "vitest": "^4.1.2"
   },
-  "packageManager": "pnpm@10.11.1",
+  "packageManager": "pnpm@10.33.0",
   "engines": {
     "node": ">=18"
   }
