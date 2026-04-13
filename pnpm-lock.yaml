@@ -23,9 +23,6 @@ importers:
       '@typescript/native-preview':
         specifier: 7.0.0-dev.20260328.1
         version: 7.0.0-dev.20260328.1
-      '@zeroopensource/zero-cli':
-        specifier: latest
-        version: 0.0.4
       '@zeroopensource/zero-id':
         specifier: latest
         version: 0.0.4
@@ -651,6 +648,9 @@ packages:
 
   '@zeroopensource/zero-id@0.0.4':
     resolution: {integrity: sha512-EpSdnnjj+wmTAij+ujJpmtdhvqTjI9INwpSuqi1WmsvH22AChc+sbtYlPoC/wszCoCGBRwJGMSPvFA/IsSORPg==}
+
+  '@zeroopensource/zero-id@0.0.5':
+    resolution: {integrity: sha512-kL2E3TRC5xQhWOYIfyl+ZHbPMHMSbLknR3wLeU+CVrmrbxFFvZUazN/8PIOCkr4suAOrmAeOgFhTnCq7gGbpLw==}
 
   '@zeroopensource/zero-official@0.0.3':
     resolution: {integrity: sha512-3oqWIjtRQWA1CMeWyQLFQnhrhQK5XS7WuWofkzPti4RcVNyxOKpshQmJamAojbaHOMO1ptbt4BR9XUn7Kr0XbA==}
@@ -2637,12 +2637,20 @@ snapshots:
 
   '@zeroopensource/zero-cli@0.0.4':
     dependencies:
-      '@zeroopensource/zero-id': 0.0.4
+      '@zeroopensource/zero-id': 0.0.5
       '@zeroopensource/zero-official': 0.0.3
       commander: 14.0.3
       resolve: 1.22.10
 
   '@zeroopensource/zero-id@0.0.4':
+    dependencies:
+      '@zeroopensource/zero-cli': 0.0.4
+      commander: 14.0.3
+      date-fns: 4.1.0
+      nanoid: 5.1.7
+      tsx: 4.21.0
+
+  '@zeroopensource/zero-id@0.0.5':
     dependencies:
       '@zeroopensource/zero-cli': 0.0.4
       commander: 14.0.3
