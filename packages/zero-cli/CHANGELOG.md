@@ -1,5 +1,11 @@
 # @zeroopensource/zero-cli
 
+## 0.0.6
+
+### Patch Changes
+
+- [#20](https://github.com/zeroopensource/zero-cli/pull/20) [`53b0a2e`](https://github.com/zeroopensource/zero-cli/commit/53b0a2e0d4fb34162ce4d865ba7dbc02925f9ad3) Thanks [@jigz](https://github.com/jigz)! - chore: replace cpx with fs copy and bump zero-cliUpdate package configs and lockfile to remove the cpx dependencyand a Node fs-based copy in the zero-cli prepack script.iminates the external c tool favor of a lightweight inlinecopy to avoid an extra and potential version.
+
 ## 0.0.5
 
 ### Patch Changes
