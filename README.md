@@ -13,5 +13,6 @@ pnpm build
 test
 
 ```
+pnpm --filter zero-cli zero-cli -h
 pnpm --filter zero-cli zero-cli id
 ```
