@@ -1,11 +1,12 @@
 #!/usr/bin/env node
+import { generateZeroId } from "@zeroopensource/zero-id";
+import { ZERO_OFFICIAL_LINKS } from "@zeroopensource/zero-official";
 import {
   program,
   // InvalidArgumentError
 } from "commander";
 import packagejson from "../package.json";
-import { ZERO_OFFICIAL_LINKS } from "@zeroopensource/zero-official";
-import { generateZeroId } from "@zeroopensource/zero-id";
+import { buildIndex } from "./build-index";
 import { commanderParseInt } from "./commander-parse-int";
 
 program
@@ -17,7 +18,7 @@ program
 
 program
   .command("official")
-  .description("Show official links for Zero Open Source")
+  .description("show official links for Zero Open Source")
   .action(() => {
     console.log("\nOfficial Links:\n");
     for (const [_key, value] of Object.entries(ZERO_OFFICIAL_LINKS)) {
@@ -42,6 +43,13 @@ program
   .option("--separator <value>", `change separator (default: '-')`)
   .action((options) => {
     console.log(generateZeroId({ ...options }));
+  });
+
+program
+  .command("index")
+  .description("build index")
+  .action(() => {
+    buildIndex();
   });
 
 program.parse(process.argv);

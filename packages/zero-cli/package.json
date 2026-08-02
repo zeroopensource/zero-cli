@@ -38,6 +38,10 @@
     "@types/resolve": "1.20.6"
   },
   "exports": {
+    "./build-index": {
+      "import": "./dist/build-index.mjs",
+      "require": "./dist/build-index.cjs"
+    },
     "./commander-parse-int": {
       "import": "./dist/commander-parse-int.mjs",
       "require": "./dist/commander-parse-int.cjs"

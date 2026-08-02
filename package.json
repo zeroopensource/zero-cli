@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "check": "ultracite check",
-    "build": "turbo run build",
+    "build": "turbo run build --force",
     "dev": "turbo run dev",
     "start": "turbo run start",
     "lint": "turbo run lint",
