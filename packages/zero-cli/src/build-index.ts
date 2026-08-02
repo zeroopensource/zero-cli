@@ -4,14 +4,15 @@ import fs from "fs-extra";
 export const buildIndex = async () => {
   const markdownFiles: string[] = [];
   const root = process.cwd();
-  const ignoredDirs = new Set([
+  const ignoredDirs = [
     "node_modules",
     ".git",
     ".next",
     "dist",
     "build",
     "coverage",
-  ]);
+  ];
+  const includeExtensions = [".md", ".mdx"];
 
   async function walk(current: string): Promise<void> {
     const entries = await fs.readdir(current, { withFileTypes: true });
@@ -20,13 +21,13 @@ export const buildIndex = async () => {
       const fullPath = path.join(current, entry.name);
 
       if (entry.isDirectory()) {
-        if (ignoredDirs.has(entry.name)) {
+        if (ignoredDirs.includes(entry.name)) {
           continue;
         }
         await walk(fullPath);
       } else if (
         entry.isFile() &&
-        (entry.name.endsWith(".md") || entry.name.endsWith(".mdx"))
+        includeExtensions.some((ext) => entry.name.endsWith(ext))
       ) {
         markdownFiles.push(fullPath);
       }
