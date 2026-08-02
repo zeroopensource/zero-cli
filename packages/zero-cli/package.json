@@ -27,15 +27,20 @@
     "zero-cli": "node ./dist/zero-cli.cjs"
   },
   "dependencies": {
+    "@mdx-js/mdx": "3.1.1",
     "@zeroopensource/zero-id": "latest",
     "@zeroopensource/zero-official": "latest",
     "commander": "^14.0.0",
     "fs-extra": "^11.4.0",
+    "react": "19.2.8",
+    "remark-frontmatter": "5.0.0",
+    "remark-mdx-frontmatter": "5.2.0",
     "resolve": "1.22.10"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
-    "@types/resolve": "1.20.6"
+    "@types/resolve": "1.20.6",
+    "@types/react": "^19.2.18"
   },
   "exports": {
     "./build-index": {
