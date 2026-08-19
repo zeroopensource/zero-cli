@@ -11,6 +11,10 @@ import { parseMarkdown } from "./parse-markdown";
 
 // const exportJson = async () => {};
 
+// add crc to detect changes in index, hash will not be saved on markdown files, but will be added to parsed sqlite file and json file
+
+// generate both complete seed and update seed
+
 export const buildIndex = async () => {
   const markdownPaths: string[] = await getMarkdownPaths();
   for (const path of markdownPaths) {
